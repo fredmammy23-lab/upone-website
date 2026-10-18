@@ -4,6 +4,7 @@ import { Phone, SaySoScreen, SpotCueScreen } from "./components/Phone";
 import { useReveal } from "./useReveal";
 
 const EMAIL = "hello@uponesoftware.com";
+const ADMIN_EMAIL = "admin@uponesoftware.com";
 const COMPANY = "upONE Software LLC";
 
 function Wordmark({ className = "" }: { className?: string }) {
@@ -210,6 +211,12 @@ function Contact() {
         >
           {EMAIL}
         </a>
+        <p className="relative mt-3 text-sm text-ink/70">
+          Business &amp; legal:{" "}
+          <a href={`mailto:${ADMIN_EMAIL}`} className="inline-flex min-h-11 items-center font-medium text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
+            {ADMIN_EMAIL}
+          </a>
+        </p>
       </div>
     </section>
   );
@@ -220,9 +227,14 @@ function Footer() {
     <footer className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
       <Wordmark className="text-2xl text-ink" />
       <p>© {new Date().getFullYear()} {COMPANY}. All rights reserved.</p>
-      <a href={`mailto:${EMAIL}`} className="inline-flex min-h-11 items-center hover:text-ink">
-        {EMAIL}
-      </a>
+      <div className="flex flex-col sm:items-end">
+        <a href={`mailto:${EMAIL}`} className="inline-flex min-h-11 items-center hover:text-ink">
+          {EMAIL}
+        </a>
+        <a href={`mailto:${ADMIN_EMAIL}`} className="inline-flex min-h-11 items-center hover:text-ink">
+          {ADMIN_EMAIL}
+        </a>
+      </div>
     </footer>
   );
 }
